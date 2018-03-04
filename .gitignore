@@ -1,0 +1,7 @@
+*.dSYM
+*.gc*
+
+tests/*
+!tests/*_tests.c
+!tests/minunit.h
+!tests/runtests.h
