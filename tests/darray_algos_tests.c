@@ -6,9 +6,9 @@ int testcmp(char **a, char **b)
 	return strcmp(*a, *b);
 }
 
-DArray *create_wors()
+DArray *create_words()
 {
-	DArray *result = DArray_create(0, 5);
+	DArray *results = DArray_create(0, 5);
 
 	char *words[] = {
 		"asdfasfd",
@@ -21,7 +21,7 @@ DArray *create_wors()
 		DArray_push(results, words[i]);
 	}
 
-	return result;
+	return results;
 }
 
 int is_sorted(DArray *array)
@@ -29,7 +29,7 @@ int is_sorted(DArray *array)
 	int i = 0;
 
 	for (i = 0; i < DArray_count(array) - 1; i++) {
-		if (strmp(DArray_get(array, i), DArray_get(array, i + 1)) > 0) {
+		if (strcmp(DArray_get(array, i), DArray_get(array, i + 1)) > 0) {
 			return 0;
 		}
 	}
@@ -79,3 +79,5 @@ char *all_tests()
 
 	return NULL;
 }
+
+RUN_TESTS(all_tests);
